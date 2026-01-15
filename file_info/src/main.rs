@@ -56,17 +56,12 @@ fn calculate_md5(file_path: &Path) -> io::Result<String> {
 fn main() {
     let args = Args::parse();
 
-    println!("分析路径: {}", args.path.display());
-
     if !args.ignore.is_empty() {
         println!("忽略路径:");
         for ignore_path in &args.ignore {
             println!("  - {}", ignore_path.display());
         }
     }
-
-    println!("\n文件列表及更新时间:");
-    println!("{:-<80}", "");
 
     // 收集所有文件路径
     let files: Vec<_> = WalkDir::new(&args.path)
