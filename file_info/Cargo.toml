@@ -1,6 +1,6 @@
 [package]
 name = "file_info"
-version = "0.2.2"
+version = "0.2.3"
 edition = "2024"
 repository = "https://github.com/zy97/file_info"
 
@@ -12,9 +12,9 @@ eula = false
 
 [dependencies]
 clap = { version = "4.5", features = ["derive"] }
-walkdir = "2.4"
+walkdir = "2.5.0"
 md-5 = "0.10"
-rayon = "1.10"
+rayon = "1.11.0"
 
 # The profile that 'dist' will build with
 [profile.dist]
