@@ -1,18 +1,2 @@
-[package]
-name = "file_info"
-version = "0.1.0"
-edition = "2024"
-repository = "https://github.com/zy97/file_info"
-
-[package.metadata.wix]
-upgrade-guid = "DF9A9D54-AFDF-48ED-8763-C13DF85A7162"
-path-guid = "46C1E6BC-E4B1-4D09-AC41-7AC60AE18E61"
-license = false
-eula = false
-
-[dependencies]
-
-# The profile that 'dist' will build with
-[profile.dist]
-inherits = "release"
-lto = "thin"
+[workspace]
+members = ["file_info"]
