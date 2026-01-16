@@ -78,7 +78,7 @@ fn main() {
                 let timestamp = get_timestamp(modified);
                 match calculate_md5(entry.path()) {
                     Ok(md5_hash) => {
-                        print!("{}\t{}\t{}", timestamp, md5_hash, entry.path().display());
+                        println!("{}\t{}\t{}", timestamp, md5_hash, entry.path().display());
                     }
                     Err(e) => {
                         eprintln!("无法计算MD5 {}: {}", entry.path().display(), e);
