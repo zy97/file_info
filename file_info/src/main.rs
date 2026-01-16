@@ -79,7 +79,7 @@ fn main() {
                 match calculate_md5(entry.path()) {
                     Ok(md5_hash) => {
                         print!(
-                            "{}\t{}\t{}\r\n",
+                            "{}\t{}\t{}\t#$#$\r\n",
                             timestamp,
                             md5_hash,
                             entry.path().display()
