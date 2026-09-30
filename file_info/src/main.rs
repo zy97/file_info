@@ -2,7 +2,7 @@ use clap::Parser;
 use md5::{Digest as Md5Digest, Md5};
 use rayon::prelude::*;
 use serde::{Deserialize, Serialize};
-use sha2::{Digest as Sha2Digest, Sha256};
+use sha2::Sha256;
 use std::collections::HashMap;
 use std::env;
 use std::fs::{self, File};
@@ -69,7 +69,7 @@ fn calculate_md5(file_path: &Path) -> io::Result<String> {
         hasher.update(&buffer[..bytes_read]);
     }
 
-    Ok(format!("{:x}", hasher.finalize()))
+    Ok(bytes_to_hex(hasher.finalize().as_slice()))
 }
 
 fn bytes_to_hex(bytes: &[u8]) -> String {
